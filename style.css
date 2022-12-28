@@ -1,0 +1,396 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: #1a2a33;
+}
+
+/* All content settings */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+}
+
+/* Menu configuration */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.xandcircle {
+  margin-bottom: 39px;
+}
+
+.choose-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f3641;
+  width: 450px;
+  height: 180px;
+  border-radius: 15px;
+  box-shadow: 5px 8px rgba(0, 0, 0, 0.281);
+}
+
+.mark {
+  font-size: 16px;
+  font-weight: 700;
+  color: #a8bfc9;
+  margin-top: 29px;
+  margin-bottom: 24px;
+}
+
+.choose {
+  display: flex;
+  flex-direction: row;
+  width: 412px;
+  height: 72px;
+  background-color: #1a2a33;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+label {
+  display: flex;
+  width: 100%;
+  height: 54px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+label:hover {
+  background-color: #a8bfc90e;
+}
+
+input[type='radio']:checked + label.options {
+  background-color: #a8bfc9;
+}
+
+input[type='radio']:checked + label img {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(10%) saturate(2458%) hue-rotate(158deg) brightness(90%) contrast(88%);
+}
+
+.notification {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #a8bfc9;
+  opacity: 75%;
+}
+
+.cpOrPlayer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 100%;
+  gap: 20px;
+}
+
+.cpOrPlayer button {
+  padding: 20px;
+  border-radius: 15px;
+  border: none;
+  color: #1a2a33;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 5px 8px rgba(0, 0, 0, 0.226);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cpOrPlayer button:hover {
+  opacity: 80%;
+}
+
+.cpu {
+  background-color: #f2b137;
+}
+
+.player {
+  background-color: #31c3bd;
+}
+
+/* Tic Tac Toe Game configuration */
+
+.game {
+  width: 372px;
+  display: none;
+  flex-direction: column;
+  margin-top: 20vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.animation {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #a8bfc9;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.226);
+}
+
+.return {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.return:hover {
+  transform: rotate(360deg);
+}
+
+.turn {
+  display: flex;
+  gap: 10px;
+  background-color: #1f3641;
+  padding: 10px 30px;
+  color: #a8bfc9;
+  border-radius: 10px;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.226);
+}
+
+.turn img {
+  width: 20px;
+  height: 20px;
+}
+
+.game-action {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 400px;
+  gap: 20px;
+  margin-bottom: 19px;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-action .box {
+  width: 120px;
+  height: 120px;
+  border: none;
+  background-color: #1f3641;
+  border-radius: 15px;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.185);
+}
+
+/* hover in X turn */
+
+.game-action.x-turn .box:not(.o, .x):hover {
+  background-image: url(images/x-hover.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 64px 64px;
+  cursor: pointer;
+}
+
+/* hover in O turn */
+
+.game-action.o-turn .box:not(.o, .x):hover {
+  background-image: url(images/o-hover.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 64px 64px;
+  cursor: pointer;
+}
+
+/* X select */
+
+.box.x {
+  background-image: url(images/x-selected.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 64px 64px;
+}
+
+/* O select */
+
+.box.o {
+  background-image: url(images/O-selected.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 64px 64px;
+  cursor: pointer;
+}
+
+.box.o,
+.box.x {
+  cursor: not-allowed;
+}
+
+.game-action .owinner {
+  background-image: url(images/icon-o-win.svg);
+  background-size: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f2b137;
+}
+
+.game-action .xwinner {
+  background-image: url(images/icon-x-win.svg);
+  background-size: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #31c3bd;
+}
+
+/* Tic Tac Toe Score Game */
+
+.score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+  gap: 19px;
+}
+
+.coluns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 72px;
+  background-color: white;
+  border-radius: 15px;
+  color: #1a2a33;
+  font-weight: 500;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.212);
+}
+
+.coluns:nth-child(1) {
+  background-color: #31c3bd;
+}
+
+.coluns:nth-child(2) {
+  background-color: #a8bfc9;
+}
+
+.coluns:nth-child(3) {
+  background-color: #f2b137;
+}
+
+.names {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.player-wins,
+.ties,
+.loses {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Game Result */
+
+.popup {
+  background-color: #0000004f;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #1f3641;
+  align-items: center;
+  justify-content: center;
+}
+
+.result {
+  margin-top: 45px;
+  margin-bottom: 23px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #a8bfc9;
+}
+
+.whowin {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 31px;
+  font-size: 40px;
+  color: #31c3bd;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.164);
+}
+
+.whowin img {
+  object-fit: contain;
+  width: 50px;
+  height: 50px;
+}
+
+.quitreturn {
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.quitreturn button {
+  padding: 15px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  color: #1a2a33;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.185);
+  cursor: pointer;
+}
+
+.quitreturn button:hover {
+  opacity: 75%;
+}
+
+.quitreturn button:nth-child(1) {
+  background-color: #a8bfc9;
+}
+
+.quitreturn button:nth-child(2) {
+  background-color: #f2b137;
+}

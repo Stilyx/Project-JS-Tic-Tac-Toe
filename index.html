@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <main class="container">
+      <!-- Menu Select -->
+
+      <div class="menu">
+        <section class="xandcircle">
+          <img src="images/tiny-X.png" alt="tinyX" />
+          <img src="images/tiny-O.png" alt="tinyCircle" />
+        </section>
+        <section class="choose-options">
+          <p class="mark">Pick Player 1's Mark</p>
+          <form class="choose">
+            <input type="radio" name="choosecircleandx" id="x_text" checked />
+            <label for="x_text" class="options">
+              <img src="images/options-X.svg" alt="X" />
+            </label>
+
+            <input type="radio" name="choosecircleandx" id="o_text" />
+            <label for="o_text" class="options">
+              <img src="images/options-O.svg" alt="O" />
+            </label>
+          </form>
+          <p class="notification">REMEMBER: X GOES FIRST</p>
+        </section>
+        <section class="cpOrPlayer">
+          <button class="cpu">NEW GAME (VS CPU)</button>
+          <button class="player">NEW GAME (VS PLAYER)</button>
+        </section>
+      </div>
+
+      <!-- Game interaction -->
+      <div class="game">
+        <section class="header">
+          <div class="logo">
+            <img src="images/tiny-X.png" alt="tinyX" />
+            <img src="images/tiny-O.png" alt="tinyO" />
+          </div>
+
+          <div class="turn">
+            <img src="images/options-X.svg" alt="IsTurn" class="isTurn" />
+            <p>TURN</p>
+          </div>
+
+          <div class="animation"><img src="images/return.png" alt="return button" class="return" /></div>
+        </section>
+        <section class="game-action">
+          <div class="box" value="1"></div>
+          <div class="box" value="2"></div>
+          <div class="box" value="3"></div>
+          <div class="box" value="4"></div>
+          <div class="box" value="5"></div>
+          <div class="box" value="6"></div>
+          <div class="box" value="7"></div>
+          <div class="box" value="8"></div>
+          <div class="box" value="9"></div>
+        </section>
+        <!-- Score contents -->
+        <section class="score">
+          <div class="coluns">
+            <p class="player-x"></p>
+            <p class="player-wins">0</p>
+          </div>
+          <div class="coluns">
+            <p class="names">TIES</p>
+            <p class="ties">0</p>
+          </div>
+          <div class="coluns">
+            <p class="player-o"></p>
+            <p class="loses">0</p>
+          </div>
+        </section>
+        <!-- Popup Winner ou Tie Message -->
+        <section class="popup">
+          <div class="popup-content">
+            <p class="result"></p>
+            <div class="whowin">
+              <img src="images/X-result.png" alt="Win Round" />
+              <p class="whowinround">TAKES THE ROUND</p>
+            </div>
+            <div class="quitreturn">
+              <button>QUIT</button>
+              <button>NEXT ROUND</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
