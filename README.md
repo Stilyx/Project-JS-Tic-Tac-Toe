@@ -1,6 +1,3 @@
-<h1 align="center">
-Tic Tac Toe Mentor
-</h1>
 
 - Aqui temos o Menu do projeto do jogo da velha. A opção de "New Game (VS CPU) ainda não está funcionando, eu gostaria de futuramente fazer uma máquina inteligente para
 tornar a partida mais divertida.
@@ -17,5 +14,20 @@ Abaixo Temos o placar que indicará as pontuações dos jogadores.
 ou se os circulos ganhassem
 
 ![winningMessage](https://user-images.githubusercontent.com/109632184/209749200-f51f3bc2-8163-4810-9a4d-cfaca5514f88.png)
+
+<h1 align="center">Tic Tac Toe Project</h1>
+
+<h2>Inspiração do Desafio</h2>
+
+- <a href="https://www.frontendmentor.io/challenges/tic-tac-toe-game-Re7ZF_E2v" target="_blank">Mentor Challenge</a>
+
+<h2>Técnologias Utilizadas</h2>
+
+- HTML
+- CSS
+- Javascript
+
+
+
 
 
